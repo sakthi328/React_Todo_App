@@ -93,7 +93,7 @@ const handleChange = (event) => {
     >
       <MenuItem value="all">All</MenuItem>
       <MenuItem value="active">Active</MenuItem>
-      <MenuItem value="complete">Complete</MenuItem>
+      <MenuItem value="complete">Completed</MenuItem>
     </Select>
   </FormControl>
 </div>
