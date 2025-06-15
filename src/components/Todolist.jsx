@@ -64,7 +64,7 @@ fetch(`https://684235efe1347494c31c255d.mockapi.io/todos/${id}`, {
   return ( 
     
     <div className="flex ">
-      <div className="flex justify-between items-center bg-white p-2 my-1 m  ml-20 text-lg first-letter:rounded shadow w-96">
+      <div className="flex justify-between items-center bg-white p-2 my-1 m  ml-10 text-lg first-letter:rounded shadow w-96">
         <p 
           className={item.complete ? "line-through text-gray-400 italic text-2xl" : "text-gray-900 text-2xl"}
         >

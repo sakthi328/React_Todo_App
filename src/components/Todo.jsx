@@ -66,28 +66,38 @@ const handleChange = (event) => {
  return(
    <div className="flex justify-center items-center mt-20 " >
     <div>     
-        <p className=" text-3xl text-center rela font-mono mb-4 font-extrabold">TODO LIST</p>
-       <div > <input className=" bg-white text-2xl border  h-16 border-gray-300 focus:outline-none pl-3 pr-12 rounded  mb-8" value={task} name="todo-list" style={ {height :"58px", width:"550px"}} onChange={(e) => setTask(e.target.value)} />
-        <button className="mb-1"  style={{backgroundColor: "green",color: "white",height: "57px", width: "60px",alignItems:"center"}} onClick={handleAddTask}><AddIcon/></button>
-        
+        <p className=" text-3xl text-center  font-mono mb-4 font-extrabold">TODO LIST</p>
+       <div className="flex items-center gap-4 w-full max-w-3xl mb-5">
+  
+  <div className="relative w-[550px]">
+    <input
+      className="bg-white text-2xl border h-16 border-gray-300 focus:outline-none pl-4 pr-14 rounded w-full"
+      value={task}
+      name="todo-list"
+      onChange={(e) => setTask(e.target.value)}
+    />
+    <button
+      onClick={handleAddTask}
+      className="absolute top-0 right-0 h-full w-14 flex items-center justify-center bg-green-600 text-white rounded-r"
+    >
+      <AddIcon />
+    </button>
+  </div>
 
-            
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <Select sx={{ backgroundColor: 'white' }}
-          value={filter}
-          onChange={handleChange}
-          
-        >
-          
-          <MenuItem value={"all"}>All</MenuItem>
-          <MenuItem value={"active"}>Active</MenuItem>
-          <MenuItem value={"complete"}>Complete</MenuItem>
-        </Select>
+
+  <FormControl>
+    <Select
+      value={filter}
+      onChange={handleChange}
+      sx={{ backgroundColor: 'white', height: '64px', width:"120px" }} 
+    >
+      <MenuItem value="all">All</MenuItem>
+      <MenuItem value="active">Active</MenuItem>
+      <MenuItem value="complete">Complete</MenuItem>
+    </Select>
+  </FormControl>
+</div>
         
-      </FormControl>
-      
-        
-        </div>
          
          <div>{filteredTodos.map((item, index) => (
   <TodoList key={item.id} index={index} id={item.id} item={item} fetchTodos={fetchTodos} />
